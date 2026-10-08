@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lab 02: Semantic HTML and Accessibility Foundations - Profile, Office Hours, and Contact Information for Safoora."
+    />
+    <title>Safoora | Web Engineering Lab 02</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Accessible Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Ambient background glow elements -->
+    <div class="ambient-glow glow-top" aria-hidden="true"></div>
+    <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+    <!-- Header containing h1#greeting and Navigation -->
+    <header class="site-header">
+      <div class="header-container">
+        <h1 id="greeting" class="greeting-title">
+          Hi, I'm <span class="gradient-text">Safoora</span> — Aspiring Web
+          Engineer
+        </h1>
+
+        <nav class="main-navigation" aria-label="Main Navigation">
+          <ul>
+            <li>
+              <a href="#about" class="nav-link" aria-current="location"
+                >About</a
+              >
+            </li>
+            <li><a href="#office-hours" class="nav-link">Office Hours</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content landmark -->
+    <main id="main-content">
+      <!-- Section 1: About & Goals -->
+      <section
+        id="about"
+        class="content-section"
+        aria-labelledby="about-heading"
+      >
+        <h2 id="about-heading" class="section-heading">About Me &amp; Goals</h2>
+        <p class="lead-text">
+          I am Safoora, a passionate software engineering student dedicated to
+          crafting clean, accessible, and high-performance web experiences. I
+          love bridging creative interface design with robust engineering
+          standards and inclusive accessibility patterns.
+        </p>
+
+        <h3 class="subheading">What I Expect to Learn in Web Engineering</h3>
+        <ol class="learning-list">
+          <li class="learning-item">
+            <div class="item-content">
+              <h3>Semantic HTML &amp; WCAG Accessibility Foundations</h3>
+              <p>
+                Building accessible, keyboard-navigable web structures with ARIA
+                best practices and standard HTML5 landmarks.
+              </p>
+            </div>
+          </li>
+          <li class="learning-item">
+            <div class="item-content">
+              <h3>Modern Responsive CSS &amp; State Architecture</h3>
+              <p>
+                Mastering flexible grid and flexbox layouts, CSS variables, and
+                modern user interface interaction states.
+              </p>
+            </div>
+          </li>
+          <li class="learning-item">
+            <div class="item-content">
+              <h3>Full-Stack Tooling, Automated Testing &amp; Performance</h3>
+              <p>
+                Utilizing linting, formatters, Lighthouse audits, and modern
+                server runtimes for production-grade web delivery.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Decorative inline SVG divider between sections -->
+      <svg
+        aria-hidden="true"
+        class="decorative-divider"
+        viewBox="0 0 1200 24"
+        preserveAspectRatio="none"
+        focusable="false"
+      >
+        <path
+          d="M0,12 Q300,24 600,12 T1200,12"
+          stroke="url(#divider-grad-1)"
+          stroke-width="2"
+          fill="none"
+        />
+        <defs>
+          <linearGradient id="divider-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6366f1" stop-opacity="0" />
+            <stop offset="50%" stop-color="#818cf8" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#ec4899" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Section 2: Office Hours -->
+      <section
+        id="office-hours"
+        class="content-section"
+        aria-labelledby="hours-heading"
+      >
+        <div class="office-hours-header">
+          <h2 id="hours-heading" class="section-heading">
+            Office Hours Schedule
+          </h2>
+
+          <!-- Informative inline SVG icon near Office Hours table inside figure/figcaption -->
+          <figure class="office-hours-figure">
+            <svg
+              role="img"
+              aria-labelledby="clock-icon-title"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <title id="clock-icon-title">
+                Clock icon representing scheduled consultation hours
+              </title>
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <figcaption>Weekly consultation times</figcaption>
+          </figure>
+        </div>
+
+        <!-- Accessible table with caption, thead, tbody, th scope="col", time elements -->
+        <div class="table-container">
+          <table class="accessible-table">
+            <caption>
+              Available Office Hours and Consulting Sessions
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+                <th scope="col">Location</th>
+                <th scope="col">Meeting Mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Monday</th>
+                <td><time datetime="10:00">10:00 AM</time></td>
+                <td><time datetime="12:00">12:00 PM</time></td>
+                <td>Lab Room 304</td>
+                <td>In-Person</td>
+              </tr>
+              <tr>
+                <th scope="row">Wednesday</th>
+                <td><time datetime="14:00">02:00 PM</time></td>
+                <td><time datetime="16:00">04:00 PM</time></td>
+                <td>Faculty Office 12</td>
+                <td>In-Person</td>
+              </tr>
+              <tr>
+                <th scope="row">Friday</th>
+                <td><time datetime="15:00">03:00 PM</time></td>
+                <td><time datetime="17:00">05:00 PM</time></td>
+                <td>Google Meet</td>
+                <td>Virtual</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Decorative inline SVG divider between sections -->
+      <svg
+        aria-hidden="true"
+        class="decorative-divider"
+        viewBox="0 0 1200 24"
+        preserveAspectRatio="none"
+        focusable="false"
+      >
+        <path
+          d="M0,12 Q300,0 600,12 T1200,12"
+          stroke="url(#divider-grad-2)"
+          stroke-width="2"
+          fill="none"
+        />
+        <defs>
+          <linearGradient id="divider-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ec4899" stop-opacity="0" />
+            <stop offset="50%" stop-color="#a855f7" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Section 3: Contact Form -->
+      <section
+        id="contact"
+        class="content-section"
+        aria-labelledby="contact-heading"
+      >
+        <h2 id="contact-heading" class="section-heading">
+          Contact &amp; Inquiries
+        </h2>
+        <p class="lead-text">
+          Feel free to reach out for questions regarding labs, assignments, or
+          project discussions.
+        </p>
+
+        <form action="#" method="post" class="contact-form">
+          <!-- Name field with associated label -->
+          <div class="form-group">
+            <label for="contact-name">
+              Full Name
+              <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              class="form-input"
+              required
+              placeholder="e.g. Jane Doe"
+              autocomplete="name"
+            />
+          </div>
+
+          <!-- Email field with hint connected via aria-describedby -->
+          <div class="form-group">
+            <label for="contact-email">
+              Email Address
+              <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              class="form-input"
+              required
+              placeholder="jane.doe@university.edu"
+              aria-describedby="email-hint"
+              autocomplete="email"
+            />
+            <p id="email-hint" class="form-hint">
+              We will never share your email. Please provide your university or
+              active personal email address.
+            </p>
+          </div>
+
+          <!-- Fieldset and legend for radio-button group -->
+          <fieldset class="form-fieldset">
+            <legend>
+              Inquiry Category
+              <span class="required-indicator" aria-hidden="true">*</span>
+            </legend>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="category"
+                  value="lab"
+                  required
+                  checked
+                />
+                <span>Lab Assistance</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="category" value="collaboration" />
+                <span>Project Collaboration</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="category" value="office-hours" />
+                <span>Office Hours Booking</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Labelled message textarea -->
+          <div class="form-group">
+            <label for="contact-message">
+              Your Message
+              <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              class="form-textarea"
+              rows="5"
+              required
+              placeholder="Type your message or inquiry here..."
+            ></textarea>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Send Message
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer containing an address element -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <address class="contact-address">
+          <p><strong>Safoora</strong> — Web Engineering Student</p>
+          <p>Department of Computer Science &amp; Software Engineering</p>
+          <p>
+            Email: <a href="mailto:safoora@example.edu">safoora@example.edu</a>
+          </p>
+          <p>Office Location: Tech Hall, Room 304</p>
+        </address>
+        <p class="copyright">
+          &copy; 2026 Web Engineering Lab. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script for updating aria-current="location" for the section in view -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll(
+          ".main-navigation .nav-link"
+        );
+        const sections = document.querySelectorAll("main > section");
+
+        // Update aria-current on click
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.forEach((l) => l.removeAttribute("aria-current"));
+            link.setAttribute("aria-current", "location");
+          });
+        });
+
+        // Update aria-current dynamically when scrolling into view
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const id = entry.target.getAttribute("id");
+                  navLinks.forEach((link) => {
+                    if (link.getAttribute("href") === `#${id}`) {
+                      link.setAttribute("aria-current", "location");
+                    } else {
+                      link.removeAttribute("aria-current");
+                    }
+                  });
+                }
+              });
+            },
+            {
+              rootMargin: "-20% 0px -70% 0px",
+            }
+          );
+
+          sections.forEach((sec) => observer.observe(sec));
+        }
+      });
+    </script>
+  </body>
+</html>
